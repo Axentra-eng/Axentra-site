@@ -1,0 +1,23 @@
+[[redirects]]
+  from = "/ar"
+  to = "/ar/index.html"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/ar.html"
+  to = "/ar/index.html"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
